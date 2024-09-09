@@ -1,7 +1,8 @@
 def check_if_symmetric(word):
+    word = word.lower()
     reversed_word = word[::-1]
-    # print(word)
-    # print(reversed_word)
+    print(word)
+    print(reversed_word)
     if word == reversed_word:
         return True
     else:
