@@ -58,10 +58,15 @@
 # print(get_union(array1 = [1, 3,3, 5, 7, 9],array2 = [3, 6, 7, 10]))
 
 def count_characters(string):
+  string = string.lower()
   char_count = 0
-  char_array = []
+  char_dict= {}
   for char in string:
-    char_array.append(char)
-  return char_array
+    if char in char_dict:
+      char_dict[char] += 1
+    else:
+      char_dict[char] = 1
+    # char_dict.update({string[char]: char_count})
+  return char_dict
   
-print(count_characters("A cat"))
+print(count_characters("A Cat"))
