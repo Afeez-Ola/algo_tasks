@@ -57,16 +57,28 @@
 
 # print(get_union(array1 = [1, 3,3, 5, 7, 9],array2 = [3, 6, 7, 10]))
 
-def count_characters(string):
-  string = string.lower()
-  char_count = 0
-  char_dict= {}
-  for char in string:
-    if char in char_dict:
-      char_dict[char] += 1
-    else:
-      char_dict[char] = 1
-    # char_dict.update({string[char]: char_count})
-  return char_dict
+# def count_characters(string):
+#   string = string.lower()
+#   char_count = 0
+#   char_dict= {}
+#   for char in string:
+#     if char in char_dict:
+#       char_dict[char] += 1
+#     else:
+#       char_dict[char] = 1
+#   return char_dict
   
-print(count_characters("A Cat"))
+# print(count_characters("A Cat"))
+
+
+
+def is_prime(N):
+  isPrime = False
+  if N % 2 == 0 or N % 3 == 0:
+    isPrime = False
+  elif (N == 2 or N == 3) or N >= 1:
+    isPrime = True 
+  return isPrime
+
+print(is_prime(17))
+  
