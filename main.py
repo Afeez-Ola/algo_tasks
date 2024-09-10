@@ -33,12 +33,25 @@
 # print(convert_to_numbers([1,0,3,1,20]))
 
 
-def get_intersection(array1, array2):
-    intersect_array = []
-    for item in array1:
-        if item in array2 and item not in intersect_array:
-            intersect_array.append(item)
-    return intersect_array
+# def get_intersection(array1, array2):
+#     intersect_array = []
+#     for item in array1:
+#         if item in array2 and item not in intersect_array:
+#             intersect_array.append(item)
+#     return intersect_array
 
-print(get_intersection(array1 = [1, 3,3, 5, 7, 9],array2 = [3, 6, 7, 10]))
+# print(get_intersection(array1 = [1, 3,3, 5, 7, 9],array2 = [3, 6, 7, 10]))
 
+
+def get_union(array1, array2):
+    union_array = []
+    for i in array1:
+        if i not in union_array:
+            union_array.append(i)
+        for j in array2:
+            if j not in union_array:
+                union_array.append(j)
+            
+    return sorted(union_array)
+
+print(get_union(array1 = [1, 3,3, 5, 7, 9],array2 = [3, 6, 7, 10]))
