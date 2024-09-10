@@ -43,15 +43,25 @@
 # print(get_intersection(array1 = [1, 3,3, 5, 7, 9],array2 = [3, 6, 7, 10]))
 
 
-def get_union(array1, array2):
-    union_array = []
-    for i in array1:
-        if i not in union_array:
-            union_array.append(i)
-        for j in array2:
-            if j not in union_array:
-                union_array.append(j)
-            
-    return sorted(union_array)
 
-print(get_union(array1 = [1, 3,3, 5, 7, 9],array2 = [3, 6, 7, 10]))
+# def get_union(array1, array2):
+#     union_array = []
+#     for i in array1:
+#         if i not in union_array:
+#             union_array.append(i)
+#         for j in array2:
+#             if j not in union_array:
+#                 union_array.append(j)
+            
+#     return sorted(union_array)
+
+# print(get_union(array1 = [1, 3,3, 5, 7, 9],array2 = [3, 6, 7, 10]))
+
+def count_characters(string):
+  char_count = 0
+  char_array = []
+  for char in string:
+    char_array.append(char)
+  return char_array
+  
+print(count_characters("A cat"))
