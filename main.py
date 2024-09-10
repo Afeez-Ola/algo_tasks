@@ -22,13 +22,23 @@
 # print(convert_to_numbers("a cat"))
 
 
-def convert_to_numbers(num_list):
-    alphabets = [' ','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-    output_char_list = []
-    for num in num_list:
-        output_char_list.append(alphabets[num])
-    output_string = "".join(output_char_list)
-    return output_string
+# def convert_to_numbers(num_list):
+#     alphabets = [' ','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+#     output_char_list = []
+#     for num in num_list:
+#         output_char_list.append(alphabets[num])
+#     output_string = "".join(output_char_list)
+#     return output_string
 
-print(convert_to_numbers([1,0,3,1,20]))
+# print(convert_to_numbers([1,0,3,1,20]))
+
+
+def get_intersection(array1, array2):
+    intersect_array = []
+    for item in array1:
+        if item in array2 and item not in intersect_array:
+            intersect_array.append(item)
+    return intersect_array
+
+print(get_intersection(array1 = [1, 3,3, 5, 7, 9],array2 = [3, 6, 7, 10]))
 
