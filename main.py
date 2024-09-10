@@ -12,12 +12,23 @@
 # print(check_if_symmetric(word))
 
 
-def convert_to_numbers(string):
-    alphabets = [' ','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-    output_array = []
-    for char in string:
-        output_array.append(alphabets.index(char))
-    return output_array
+# def convert_to_numbers(string):
+#     alphabets = [' ','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+#     output_array = []
+#     for char in string:
+#         output_array.append(alphabets.index(char))
+#     return output_array
 
-print(convert_to_numbers("a cat"))
+# print(convert_to_numbers("a cat"))
+
+
+def convert_to_numbers(num_list):
+    alphabets = [' ','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+    output_char_list = []
+    for num in num_list:
+        output_char_list.append(alphabets[num])
+    output_string = "".join(output_char_list)
+    return output_string
+
+print(convert_to_numbers([1,0,3,1,20]))
 
