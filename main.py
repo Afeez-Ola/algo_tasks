@@ -1,45 +1,47 @@
-import unittest
-def check_if_symmetric(word):
-    word = word.lower()
-    reversed_word = word[::-1]
-    # print(word)
-    # print(reversed_word)
-    if word == reversed_word:
-        return True
-    else:
-        return False
+# import unittest
+# def check_if_symmetric(word):
+#     word = word.lower()
+#     reversed_word = word[::-1]
+#     # print(word)
+#     # print(reversed_word)
+#     if word == reversed_word:
+#         return True
+#     else:
+#         return False
 
-# word = input("Enter a word: ")
-# print(check_if_symmetric(word))
+# # word = input("Enter a word: ")
+# # print(check_if_symmetric(word))
 
-class TestSymmetryChecker(unittest.TestCase):
-  def not_palindrome(self):
-    self.assertFalse(check_if_symmetric("hello"))
+# class TestSymmetryChecker(unittest.TestCase):
+#   def not_palindrome(self):
+#     self.assertFalse(check_if_symmetric("hello"))
   
-  def not_palindrome(self):
-    self.assertTrue(check_if_symmetric("madam"))
+#   def not_palindrome(self):
+#     self.assertTrue(check_if_symmetric("madam"))
     
-  def test_mixed_case_palindrome(self):
-    self.assertTrue(check_if_symmetric("RaceCar"))
+#   def test_mixed_case_palindrome(self):
+#     self.assertTrue(check_if_symmetric("RaceCar"))
   
-  def test_empty_string(self):
-    self.assertTrue(check_if_symmetric(""))
+#   def test_empty_string(self):
+#     self.assertTrue(check_if_symmetric(""))
     
-  def test_single_character_string(self):
-    self.assertTrue(check_if_symmetric("a"))
+#   def test_single_character_string(self):
+#     self.assertTrue(check_if_symmetric("a"))
   
-if __name__ == "__main__":
-  unittest.main()
+# if __name__ == "__main__":
+#   unittest.main()
 
 
-# def convert_to_numbers(string):
-#     alphabets = [' ','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-#     output_array = []
-#     for char in string:
-#         output_array.append(alphabets.index(char))
-#     return output_array
+def convert_to_numbers(string):
+    alphabets = [' ','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+    output_array = []
+    for char in string:
+      if char not in alphabets:
+        raise ValueError(f"Character {char} not in English alphabets!, try again with a valid English alphabet.")
+      output_array.append(alphabets.index(char))
+    return output_array
 
-# print(convert_to_numbers("a cat"))
+print(convert_to_numbers(""))
 
 
 # def convert_to_numbers(num_list):
