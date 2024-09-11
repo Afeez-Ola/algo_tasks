@@ -1,4 +1,4 @@
-from main import check_if_symmetric
+from day1 import check_if_symmetric
 
 tests = [
   {
