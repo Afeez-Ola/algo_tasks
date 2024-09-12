@@ -33,10 +33,9 @@ def hexadecimal_to_decimal(string):
       hexa_multiply = alphabets_values[char] * hexa_convert
       extracted_alphabets_list.append(hexa_multiply)
     hexadecimal_list = extracted_alphabets_list + extracted_num_list
-    hexa_dict = {}
-    hexa_dict[0] = reversed_string[0]
+    
       
-  return decimal_value, extracted_num_list, extracted_alphabets_list, hexadecimal_list, hexa_dict
+  return decimal_value, extracted_num_list, extracted_alphabets_list, hexadecimal_list
 
 if __name__ == "__main__":
   # string = input("Kindly enter a hexadecimal number: ")
