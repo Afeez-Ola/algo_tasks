@@ -27,7 +27,7 @@ def hexadecimal_to_decimal(string):
     if char in decimal_numbers:
       extracted_num_list.append(int(char))
     elif char in alphabets_values.keys():
-      extracted_alphabets_list.append(char)
+      extracted_alphabets_list.append(alphabets_values[char])
       
   return decimal_value, extracted_num_list, extracted_alphabets_list
 
