@@ -27,13 +27,16 @@ def hexadecimal_to_decimal(string):
     if char in decimal_numbers:
       extracted_num_list.append(int(char))
     elif char in alphabets_values.keys():
-      extracted_alphabets_list.append(alphabets_values[char])
+      hexa_convert = 16**index
+      print(char,index, hexa_convert)
+      hexa_multiply = alphabets_values[char] * hexa_convert
+      extracted_alphabets_list.append(hexa_multiply)
       
   return decimal_value, extracted_num_list, extracted_alphabets_list
 
 if __name__ == "__main__":
   # string = input("Kindly enter a hexadecimal number: ")
   
-  print(hexadecimal_to_decimal("3BB07F"))
+  print(hexadecimal_to_decimal("3B07F"))
   
   
