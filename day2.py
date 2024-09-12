@@ -22,7 +22,8 @@ def hexadecimal_to_decimal(string):
   extracted_alphabets_list = []
   decimal_numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
   alphabets_values = {"a":10, "b":11, "c":12, "d":13, "e":14, "f":15}
-  for i, char in enumerate(reversed(string)):
+  reversed_string = list(reversed(string))
+  for i, char in enumerate(reversed_string):
     index = len(string) - i -1
     if char in decimal_numbers:
       extracted_num_list.append(int(char))
@@ -31,8 +32,11 @@ def hexadecimal_to_decimal(string):
       print(char,index, hexa_convert)
       hexa_multiply = alphabets_values[char] * hexa_convert
       extracted_alphabets_list.append(hexa_multiply)
+    hexadecimal_list = extracted_alphabets_list + extracted_num_list
+    hexa_dict = {}
+    hexa_dict[0] = reversed_string[0]
       
-  return decimal_value, extracted_num_list, extracted_alphabets_list
+  return decimal_value, extracted_num_list, extracted_alphabets_list, hexadecimal_list, hexa_dict
 
 if __name__ == "__main__":
   # string = input("Kindly enter a hexadecimal number: ")
