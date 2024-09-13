@@ -29,25 +29,33 @@ def hexadecimal_to_decimal(string):
       extracted_num_list.append(int(char))
     elif char in alphabets_values.keys():
       hexa_convert = 16**index
-      print(char,index, hexa_convert)
+      # print(char,index, hexa_convert)
       hexa_multiply = alphabets_values[char] * hexa_convert
       extracted_alphabets_list.append(hexa_multiply)
   binary_list = extracted_alphabets_list + extracted_num_list
-  result = map_array_to_string(binary_list,reversed_string)
+  result = map_array_to_string_index(binary_list,string)
   return  result
 
   
-def map_array_to_string(arr, string):
-    # Reverse the string to match the order in the array
-    reversed_string = string[::-1]
-    
-    # Use zip to create pairs of integers and characters
-    mapped = dict(zip(arr, reversed_string))
-    
-    # Sort the dictionary by the original array order
-    result = {k: mapped[k] for k in arr}
-    
+def map_array_to_string_index(arr, string):
+
+    string = string.lower()
+    result = {}
+
+    for num in arr:
+        hex_str = format(num, 'x')
+
+        # Find the index of the **first** occurrence of the **leftmost** character in hex_str that exists in string
+        for i in range(len(hex_str)):
+            if hex_str[i] in string:
+                index = string.index(hex_str[i])
+                result[num] = index
+                break
+
     return result
+
+
+
 
     
       
