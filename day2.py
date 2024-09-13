@@ -17,7 +17,7 @@ def hexadecimal_to_decimal(string):
   string = string.lower()
   decimal_value = 0
   position =0
-  hexadecimal_list = []
+  binary_list = []
   extracted_num_list = []
   extracted_alphabets_list = []
   decimal_numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
@@ -32,10 +32,25 @@ def hexadecimal_to_decimal(string):
       print(char,index, hexa_convert)
       hexa_multiply = alphabets_values[char] * hexa_convert
       extracted_alphabets_list.append(hexa_multiply)
-    hexadecimal_list = extracted_alphabets_list + extracted_num_list
+  binary_list = extracted_alphabets_list + extracted_num_list
+  result = map_array_to_string(binary_list,reversed_string)
+  return  result
+
+  
+def map_array_to_string(arr, string):
+    # Reverse the string to match the order in the array
+    reversed_string = string[::-1]
+    
+    # Use zip to create pairs of integers and characters
+    mapped = dict(zip(arr, reversed_string))
+    
+    # Sort the dictionary by the original array order
+    result = {k: mapped[k] for k in arr}
+    
+    return result
+
     
       
-  return decimal_value, extracted_num_list, extracted_alphabets_list, hexadecimal_list
 
 if __name__ == "__main__":
   # string = input("Kindly enter a hexadecimal number: ")
