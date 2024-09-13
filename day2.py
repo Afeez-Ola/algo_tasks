@@ -29,12 +29,17 @@ def hexadecimal_to_decimal(string):
       extracted_num_list.append(int(char))
     elif char in alphabets_values.keys():
       hexa_convert = 16**index
-      # print(char,index, hexa_convert)
       hexa_multiply = alphabets_values[char] * hexa_convert
       extracted_alphabets_list.append(hexa_multiply)
   binary_list = extracted_alphabets_list + extracted_num_list
   result = map_array_to_string_index(binary_list,string)
-  return  result
+  
+  array_size = max(result.values()) + 1
+  hex_array = [None] * array_size
+  
+  for key, value in result.items():
+    hex_array[value] = key
+  return hex_array
 
   
 def map_array_to_string_index(arr, string):
